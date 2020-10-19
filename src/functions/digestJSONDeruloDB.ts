@@ -30,8 +30,6 @@ export async function digestJSONDeruloDB(): Promise<void> {
 		if (!table["count(*)"]) {
 			// If the table isn't there, create it and setup the database correctly.
 			sql.prepare("CREATE TABLE ReminderList (ID TEXT, json TEXT);").run();
-			// Ensure that the "id" row is always unique and indexed.
-			sql.prepare("CREATE UNIQUE INDEX idx_scores_id ON scores (ID);").run();
 			sql.pragma("synchronous = 1");
 			sql.pragma("journal_mode = wal");
 		}
@@ -41,8 +39,6 @@ export async function digestJSONDeruloDB(): Promise<void> {
 		if (!table["count(*)"]) {
 			// If the table isn't there, create it and setup the database correctly.
 			sql.prepare("CREATE TABLE ReminderList (ID TEXT, json TEXT);").run();
-			// Ensure that the "id" row is always unique and indexed.
-			sql.prepare("CREATE UNIQUE INDEX idx_scores_id ON scores (ID);").run();
 			sql.pragma("synchronous = 1");
 			sql.pragma("journal_mode = wal");
 		}
@@ -52,8 +48,6 @@ export async function digestJSONDeruloDB(): Promise<void> {
 		if (!table["count(*)"]) {
 			// If the table isn't there, create it and setup the database correctly.
 			sql.prepare("CREATE TABLE ReminderList (ID TEXT, json TEXT);").run();
-			// Ensure that the "id" row is always unique and indexed.
-			sql.prepare("CREATE UNIQUE INDEX idx_scores_id ON scores (ID);").run();
 			sql.pragma("synchronous = 1");
 			sql.pragma("journal_mode = wal");
 		}
