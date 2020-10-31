@@ -6,6 +6,8 @@ export class customClient extends AkairoClient {
 	commandHandler: CommandHandler;
 	inhibitorHandler: InhibitorHandler;
 	listenerHandler: ListenerHandler;
+	db: any;
+	settings: any;
 	constructor() {
 		super({
 			ownerID: config.ownerID,

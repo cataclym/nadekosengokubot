@@ -1,12 +1,15 @@
 "use strict";
 
 import { customClient } from "./struct/client";
-import { config } from "./config";
 
 const client = new customClient();
+client.db = require("./pgsql.js");
 
 process.on("unhandledRejection", error => console.error("unhandledRejection | ", error));
 
-client.login(config.token).catch((err: Error) => {
-	console.error(err);
-});
+run();
+
+async function run() {
+	client.settings = await client.db.settings();
+	client.login(client.settings.token);
+}
